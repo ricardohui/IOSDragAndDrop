@@ -12,6 +12,7 @@
 		8CFE3D981C2F9D0700614B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE3D961C2F9D0700614B0B /* Main.storyboard */; };
 		8CFE3D9A1C2F9D0700614B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE3D991C2F9D0700614B0B /* Assets.xcassets */; };
 		8CFE3D9D1C2F9D0700614B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE3D9B1C2F9D0700614B0B /* LaunchScreen.storyboard */; };
+		8CFE3DA51C2F9E6B00614B0B /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFE3DA41C2F9E6B00614B0B /* MyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8CFE3D991C2F9D0700614B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CFE3D9C1C2F9D0700614B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CFE3D9E1C2F9D0700614B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFE3DA41C2F9E6B00614B0B /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				8CFE3D921C2F9D0700614B0B /* AppDelegate.swift */,
 				8CFE3D941C2F9D0700614B0B /* ViewController.swift */,
 				8CFE3D961C2F9D0700614B0B /* Main.storyboard */,
+				8CFE3DA41C2F9E6B00614B0B /* MyView.swift */,
 				8CFE3D991C2F9D0700614B0B /* Assets.xcassets */,
 				8CFE3D9B1C2F9D0700614B0B /* LaunchScreen.storyboard */,
 				8CFE3D9E1C2F9D0700614B0B /* Info.plist */,
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					8CFE3D8E1C2F9D0700614B0B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2Y4EZCE9LM;
 					};
 				};
 			};
@@ -135,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFE3DA51C2F9E6B00614B0B /* MyView.swift in Sources */,
 				8CFE3D951C2F9D0700614B0B /* ViewController.swift in Sources */,
 				8CFE3D931C2F9D0700614B0B /* AppDelegate.swift in Sources */,
 			);
@@ -249,10 +254,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DragnDrop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.tik.DragnDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -260,10 +268,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DragnDrop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.tik.DragnDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -286,6 +297,7 @@
 				8CFE3DA31C2F9D0700614B0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
