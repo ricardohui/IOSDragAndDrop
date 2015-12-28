@@ -10,7 +10,7 @@ import UIKit
 
 class MyView: UIView {
     var lastLocation:CGPoint = CGPointMake(0, 0)
-    
+    var delegate: DroppableDelegate?
     
      override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,4 +43,25 @@ class MyView: UIView {
         // Remember original location
         lastLocation = self.center
     }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+       //call method, this view as parameter
+        delegate?.doWhenTouchesEnded(self)
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+    }
+    
+    override func touchesEstimatedPropertiesUpdated(touches: Set<NSObject>) {
+        
+    }
+}
+
+protocol DroppableDelegate{
+    func doWhenTouchesEnded(view: UIView)
 }
