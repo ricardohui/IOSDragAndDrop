@@ -9,14 +9,14 @@
 import UIKit
 
 class MyView: UIView {
-    var lastLocation:CGPoint = CGPointMake(0, 0)
+    //var lastLocation:CGPoint = CGPointMake(0, 0)
     var delegate: DroppableDelegate?
     
      override init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
         let panRecognizer = UIPanGestureRecognizer(target:self, action:"detectPan:")
-        self.gestureRecognizers = [panRecognizer]
+        self.gestureRecognizers = [panRecognizer] // register the pan gesture recognizer to the view
         
         //randomize view color
         let blueValue = CGFloat(Int(arc4random() % 255)) / 255.0
@@ -32,7 +32,20 @@ class MyView: UIView {
     
     func detectPan(recognizer:UIPanGestureRecognizer) {
         let translation  = recognizer.translationInView(self.superview!)
-        self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+        if let view = recognizer.view {
+            view.center = CGPoint(x:view.center.x + translation.x,
+                y:view.center.y + translation.y)
+        
+        }
+        
+        //self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+        recognizer.setTranslation(CGPointMake(0, 0), inView: self.superview!) // reset the translation
+        //delegate?.doWhenTouchesEnded(self)
+        
+        if (recognizer.state == UIGestureRecognizerState.Ended){
+            delegate?.doWhenTouchesEnded(self)
+        }
+        
     }
     
 
@@ -41,16 +54,16 @@ class MyView: UIView {
         self.superview?.bringSubviewToFront(self)
         
         // Remember original location
-        lastLocation = self.center
+        //lastLocation = self.center
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
        //call method, this view as parameter
-        delegate?.doWhenTouchesEnded(self)
+        //delegate?.doWhenTouchesEnded(self)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        
+        //delegate?.doWhenTouchesEnded(self)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
