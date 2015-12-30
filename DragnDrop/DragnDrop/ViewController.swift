@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,DroppableDelegate {
     @IBOutlet weak var binImageView: UIImageView!
-
+    let binType: String = "binType"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,6 +40,11 @@ class ViewController: UIViewController,DroppableDelegate {
 
     func doWhenTouchesEnded(view: UIView) {
         if (CGRectContainsPoint(binImageView.frame, view.frame.origin)){
+            if (view .isMemberOfClass(MyView)){
+                if let waste = view as? MyView{
+                    waste.wasteType = binType
+                }
+            }
             view.removeFromSuperview()
         }else{
             

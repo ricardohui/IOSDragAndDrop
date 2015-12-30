@@ -11,6 +11,7 @@ import UIKit
 class MyView: UIView {
     //var lastLocation:CGPoint = CGPointMake(0, 0)
     var delegate: DroppableDelegate?
+    var wasteType: String = ""
     
      override init(frame: CGRect) {
         super.init(frame: frame)
